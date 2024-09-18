@@ -2,8 +2,8 @@ import ParticlesComponent from "./Particles";
 
 const Hero = () => {
   return (
-    <div>
-      <ParticlesComponent id="particles" />
+    <div className="h-screen">
+      <ParticlesComponent />
     </div>
   );
 };
