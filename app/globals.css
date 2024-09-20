@@ -6,7 +6,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #141c3a;
+  --foreground: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -97,8 +97,20 @@ body {
   z-index: -1;
   width: 100%;
   height: 100vh;
+  position: absolute;
 }
 
 .link-animation {
   @apply relative block after:block after:content-[''] after:absolute after:h-[2px] after:bg-[#141c3a] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center;
+}
+
+.glassmorphic-card {
+  position: relative;
+  /* z-index: -1; */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
