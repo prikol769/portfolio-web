@@ -6,6 +6,7 @@ import Github from "../app/assets/github.svg";
 import Facebook from "../app/assets/facebook.svg";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -32,18 +33,16 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 z-40 w-full px-12 py-2 ease-out duration-500 flex  ${
+      className={`fixed top-0 z-40 w-full px-12 py-2 ease-out duration-500 flex lg:px-6 md:h-[60px]  ${
         isSticky ? "bg-white h-[60px] shadow-lg" : "h-[76px]"
       }`}
     >
-      <div
-        className={`w-full flex items-center justify-between max-w-[1500px] mx-auto`}
-      >
+      <div className="w-full flex items-center justify-between max-w-[1500px] mx-auto">
         <Link href="/">
           <Image src={Logo} alt="logo" width={53} height={39} />
         </Link>
         <nav>
-          <ul className="flex font-semibold text-black text-sm">
+          <ul className="flex font-semibold text-black text-sm md:hidden">
             <li className="px-4">
               <Link href="/" className="link-animation">
                 HOME
@@ -71,7 +70,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <div className="flex gap-3">
+        <div className="flex gap-3 md:hidden">
           <Link
             href="/"
             className="ease-out duration-500 hover:translate-y-[-3px]"
@@ -91,6 +90,9 @@ const Header = () => {
             <Image src={Facebook} alt="facebook" width={30} height={30} />
           </Link>
         </div>
+      </div>
+      <div className="hidden md:block mt-[3px]">
+        <MobileMenu />
       </div>
     </header>
   );
