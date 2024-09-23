@@ -120,3 +120,13 @@ body {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+.tagcloud--item:hover {
+  filter: brightness(100%);
+  filter: drop-shadow(0 0 3px rgb(0 0 0 / 0.4));
+}
+
+.tagcloud--item {
+  filter: brightness(70%);
+  cursor: pointer;
+}
